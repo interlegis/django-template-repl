@@ -70,9 +70,7 @@ class Completer(object):
             possibilities = ['%s' % filt for filt in filters]
 
         # Filter out possibilites that do not start with the text in the partial
-        possibilities = filter(
-            lambda poss: poss.startswith(partial),
-            possibilities)
+        possibilities = [poss for poss in possibilities if poss.startswith(partial)]
 
         return [(prefix + pivot + poss) for poss in possibilities]
 
