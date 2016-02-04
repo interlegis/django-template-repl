@@ -25,7 +25,7 @@ class Command(BaseCommand):
             client = Client()
             response = client.get(url)
             if not response.context:
-                print 'Response for given URL contains no context (code %s).' % response.status_code
+                print('Response for given URL contains no context (code %s).' % response.status_code)
             else:
                 if isinstance(response.context, Context):
                     context = response.context
